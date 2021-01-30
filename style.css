@@ -1,0 +1,179 @@
+/*
+* Project Name: Analog Clock,
+* Created Date: 30.01.2021,
+* Author: Md Sumon Mia,
+* Author URI: https://mdsumonmia.com/
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-height: 100vh;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: -o-linear-gradient(45deg, #e91e63, #e91e63 50%, #ffc107 50%, #ffc107);
+    background: linear-gradient(45deg, #e91e63, #e91e63 50%, #ffc107 50%, #ffc107);
+
+}
+
+body::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: -o-linear-gradient(290deg, #015a82, #03a9f4 50%, transparent 50%, transparent);
+	background: linear-gradient(160deg, #015a82, #03a9f4 50%, transparent 50%, transparent);
+}
+
+.container {
+    position: relative;
+}
+
+.container:before {
+    content: "";
+    position: absolute;
+    bottom: -90px;
+    height: 60px;
+    width: 100%;
+    border-radius: 50%;
+    background: -o-radial-gradient(rgba(0, 0, 0, 0.1), transparent, transparent);
+    background: radial-gradient(rgba(0, 0, 0, 0.1), transparent, transparent);
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    height: 400px;
+    width: 400px;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.clock {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: -o-radial-gradient(transparent, rgba(255, 255, 255, 0.2)), url('clock.png');
+    background: radial-gradient(transparent, rgba(255, 255, 255, 0.2)), url('clock.png');
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: none;
+    border-right: none;
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    -webkit-box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1), 0px 30px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.1), 10px 10px 20px rgba(0, 0, 0, 0.1), 0px 30px 40px rgba(0, 0, 0, 0.2);
+}
+
+.clock:before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 20;
+}
+
+.hour, .minute, .second {
+    position: absolute;
+}
+
+.hour .hr {
+    width: 160px;
+    height: 160px;
+}
+
+.mn {
+    width: 190px;
+    height: 190px;
+}
+
+.sc {
+    width: 230px;
+    height: 230px;
+}
+
+.hr, .mn, .sc {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 50%;
+}
+
+.hr:before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff105e;
+    z-index: 11;
+    border-radius: 6px;
+}
+
+.mn:before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
+
+.sc:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: #fff;
+    z-index: 12;
+    border-radius: 6px;
+}
+
+@media only screen and (max-width: 400px) {
+    .box {
+        height: 250px;
+        width: 250px;
+    }
+}
